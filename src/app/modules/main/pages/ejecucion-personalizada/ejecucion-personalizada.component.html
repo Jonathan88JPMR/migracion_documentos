@@ -1,0 +1,23 @@
+<h5>Ejecución personalizada por orden</h5>
+<p class="text-muted">Procesa solo los archivos pendientes relacionados a una OC u OS. Los ya migrados no se repiten.</p>
+<div class="row g-2 align-items-end mb-3">
+  <div class="col-auto">
+    <label class="form-label">N° de orden</label>
+    <input class="form-control" [(ngModel)]="numero" placeholder="0000001710 o 6-00001624">
+  </div>
+  <div class="col-auto">
+    <label class="form-label">Tipo</label>
+    <select class="form-select" [(ngModel)]="tipo">
+      <option value="">Auto (OC y OS)</option>
+      <option value="OC">OC</option>
+      <option value="SO">OS</option>
+    </select>
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-outline-primary" (click)="runOrden()" [disabled]="ejecutando">Procesar orden</button>
+  </div>
+</div>
+<div class="mb-2" *ngIf="runState.info">{{ runState.info }}</div>
+<div class="card">
+  <div class="card-body bg-dark text-light overflow-auto" style="height: 400px; white-space: pre-wrap; font-family: monospace; font-size: 0.8rem;">{{ runState.output.join('\n') }}</div>
+</div>

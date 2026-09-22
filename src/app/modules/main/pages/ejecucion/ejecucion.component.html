@@ -1,0 +1,10 @@
+<h5>Ejecutar migración</h5>
+<div class="mb-3">
+  <p class="text-muted">Usa los lotes configurados en <em>config_modo.bat</em>.</p>
+  <button class="btn btn-primary" (click)="runNow()" [disabled]="ejecutando">Ejecutar ahora</button>
+  <button class="btn btn-warning ms-2" (click)="runAll()" [disabled]="ejecutando">Procesar todo lo faltante</button>
+</div>
+<div class="mb-2" *ngIf="runState.info">{{ runState.info }}</div>
+<div class="card">
+  <div class="card-body bg-dark text-light overflow-auto" style="height: 400px; white-space: pre-wrap; font-family: monospace; font-size: 0.8rem;">{{ runState.output.join('\n') }}</div>
+</div>

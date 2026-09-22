@@ -1,0 +1,26 @@
+[33m❯[39m Building...
+[32m✔[39m Building...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m                            [2m | [22m [1mRaw size[22m
+[32mstyles.css[39m         [2m | [22m[2mstyles[22m                           [2m | [22m[36m277.01 kB[39m[2m | [22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m                             [2m | [22m  [36m3.75 kB[39m[2m | [22m
+[32mchunk-R7WCV5R6.js[39m  [2m | [22m[2m-[22m                                [2m | [22m[36m793 bytes[39m[2m | [22m
+[32mpolyfills.js[39m       [2m | [22m[2mpolyfills[22m                        [2m | [22m [36m95 bytes[39m[2m | [22m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m                    [2m | [22m[1m281.65 kB[22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m                            [2m | [22m [1mRaw size[22m
+[32mchunk-IHK5PAEE.js[39m  [2m | [22m[2marchivos-component[22m               [2m | [22m [36m33.30 kB[39m[2m | [22m
+[32mchunk-YVV2I7RJ.js[39m  [2m | [22m[2mdashboard-component[22m              [2m | [22m [36m14.47 kB[39m[2m | [22m
+[32mchunk-5QCKTTR7.js[39m  [2m | [22m[2mconfiguracion-component[22m          [2m | [22m [36m10.85 kB[39m[2m | [22m
+[32mchunk-DLGYVTSY.js[39m  [2m | [22m[2mejecucion-personalizada-component[22m[2m | [22m  [36m9.96 kB[39m[2m | [22m
+[32mchunk-MAHOQ4SR.js[39m  [2m | [22m[2mejecucion-component[22m              [2m | [22m  [36m7.62 kB[39m[2m | [22m
+[32mchunk-Y5F66KVS.js[39m  [2m | [22m[2m-[22m                                [2m | [22m  [36m5.68 kB[39m[2m | [22m
+[32mchunk-JRK6BH4F.js[39m  [2m | [22m[2mlayout-component[22m                 [2m | [22m  [36m5.23 kB[39m[2m | [22m
+[32mchunk-CXRDJHIT.js[39m  [2m | [22m[2mlog-component[22m                    [2m | [22m  [36m4.17 kB[39m[2m | [22m
+[32mchunk-Z4I3K6SI.js[39m  [2m | [22m[2m-[22m                                [2m | [22m  [36m3.07 kB[39m[2m | [22m
+
+Application bundle generation complete. [2.080 seconds] - 2026-09-18T16:45:50.939Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m4200[22m/[39m

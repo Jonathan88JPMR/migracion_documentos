@@ -1,0 +1,13 @@
+<div class="container-fluid mt-3" id="main-wrapper">
+  <h3 class="mb-0">Migración de adjuntos <small class="text-muted fs-6">Portal de proveedores → Spring Gestión Documental</small></h3>
+
+  <ul class="nav nav-tabs mt-3">
+    <li class="nav-item" *ngFor="let t of tabs">
+      <a class="nav-link" [routerLink]="['/' + t.path]" routerLinkActive="active">{{ t.label }}</a>
+    </li>
+  </ul>
+
+  <div class="p-3 border border-top-0 bg-white">
+    <router-outlet></router-outlet>
+  </div>
+</div>
