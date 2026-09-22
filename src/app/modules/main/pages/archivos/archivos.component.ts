@@ -22,6 +22,7 @@ export class ArchivosComponent implements OnInit {
 
   rows: any[] = [];
   total = 0;
+  porEstado: { Estado: string; total: number }[] = [];
   cargando = false;
   descargando = false;
 
@@ -71,6 +72,7 @@ export class ArchivosComponent implements OnInit {
       }
       this.rows = data.rows || [];
       this.total = data.total || 0;
+      this.porEstado = data.por_estado || [];
     } catch (e: any) {
       this.alerts.showAlertError('Error', 'Error de red: ' + e.message);
     } finally {

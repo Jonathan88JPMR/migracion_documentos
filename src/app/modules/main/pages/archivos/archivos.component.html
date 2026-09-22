@@ -39,6 +39,10 @@
       {{ descargando ? 'Generando...' : 'Descargar Excel' }}
     </button>
   </div>
+  <div class="col-auto d-flex align-items-center flex-wrap gap-1" *ngIf="porEstado.length">
+    <span class="badge bg-{{ estadoColor(e.Estado) }}" *ngFor="let e of porEstado"
+          title="Archivos en estado {{ e.Estado }}">{{ e.Estado }}: {{ e.total }}</span>
+  </div>
 </div>
 
 <div *ngIf="cargando" class="text-muted mb-2">Cargando...</div>
