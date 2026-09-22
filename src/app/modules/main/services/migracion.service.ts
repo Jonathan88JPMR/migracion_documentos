@@ -37,6 +37,12 @@ export class MigracionService {
     return await this.post('archivos', filtros);
   }
 
+  async archivosExcel(tipo: string): Promise<Blob> {
+    return await lastValueFrom(
+      this.http.post(`${this.url}/archivos/excel`, { tipo }, { responseType: 'blob' })
+    );
+  }
+
   urlPreviewAp(id: number): string {
     return `${this.url}/preview/ap/${id}`;
   }

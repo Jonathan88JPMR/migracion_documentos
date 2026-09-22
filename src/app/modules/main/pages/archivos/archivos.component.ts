@@ -23,6 +23,7 @@ export class ArchivosComponent implements OnInit {
   rows: any[] = [];
   total = 0;
   cargando = false;
+  descargando = false;
 
   previewVisible = false;
   previewTitle = '';
@@ -92,6 +93,47 @@ export class ArchivosComponent implements OnInit {
   formatDate(d: any): string {
     if (!d) return '';
     try { return new Date(d).toLocaleString('es-PE'); } catch { return d; }
+  }
+
+  async descargarExcel(): Promise<void> {
+    if (this.descargando) return;
+    this.descargando = true;
+    this.alerts.mostrarModalCarga();
+    try {
+      const blob = await this.api.archivosExcel(this.tipo);
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `archivos_${this.tipo}_migrados.xlsx`;
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch (e: any) {
+      this.alerts.showAlertError('Error', 'No se pudo generar el Excel: ' + e.message);
+    } finally {
+      this.alerts.cerrarModalCarga();
+      this.descargando = false;
+    }
+  }
+
+  /** Carpeta destino sin el nombre del archivo. */
+  rutaCarpeta(r: any): string {
+    const ruta = (r.RutaDestino || '').replace(/[\\/]+$/, '');
+    const i = ruta.lastIndexOf('\\');
+    return i > 0 ? ruta.substring(0, i) : ruta;
+  }
+
+  /** Abre la carpeta UNC en el explorador y copia la ruta al portapapeles
+      (los navegadores suelen bloquear file:// desde paginas http). */
+  async abrirRuta(r: any): Promise<void> {
+    if (!r.RutaDestino) return;
+    const carpeta = this.rutaCarpeta(r);
+    window.open('file://' + carpeta.replace(/^\\\\/, '').replace(/\\/g, '/'), '_blank');
+    try {
+      await navigator.clipboard.writeText(carpeta);
+      this.alerts.mostrarInfo('Ruta copiada al portapapeles. Si no se abrio el explorador, pégala en la barra de direcciones (Win+E).');
+    } catch {
+      this.alerts.mostrarInfo('Carpeta: ' + carpeta);
+    }
   }
 
   preview(r: any): void {
